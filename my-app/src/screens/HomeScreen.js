@@ -96,7 +96,7 @@ const RECENT_REVIEWS = [
   },
 ];
 
-export default function HomeScreen() {
+export default function HomeScreen({ onExplorePress }) {
   const [fontsLoaded, fontError] = useFonts({
     Nunito_800ExtraBold,
     Nunito_600SemiBold,
@@ -140,7 +140,14 @@ export default function HomeScreen() {
         {/* Cabeçalho */}
         <View style={styles.header}>
           <View>
-            <Text style={styles.logoTitle}>MUSICFY</Text>
+            <View style={styles.logoRow}>
+              <Image
+                source={require('../../assets/musicfy-icon.png')}
+                style={styles.logoIcon}
+                contentFit="contain"
+              />
+              <Text style={styles.logoTitle}>MUSICFY</Text>
+            </View>
             <Text style={styles.subtext}>O que vamos ouvir hoje?</Text>
           </View>
 
@@ -288,7 +295,7 @@ export default function HomeScreen() {
       {/* Dock Flutuante de Navegação (Aero Dock) */}
       <View style={styles.dockContainer}>
         <View style={styles.dockGlass}>
-          <TouchableOpacity style={styles.dockItem}>
+          <TouchableOpacity style={styles.dockItem} onPress={onExplorePress}>
             <Ionicons name="home" size={24} color={PALETTE.azulAero} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.dockItem}>
@@ -338,6 +345,15 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: PALETTE.azulAero,
     letterSpacing: 0.5,
+  },
+  logoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 7,
+  },
+  logoIcon: {
+    width: 32,
+    height: 32,
   },
   subtext: {
     fontFamily: 'PlusJakartaSans_400Regular',

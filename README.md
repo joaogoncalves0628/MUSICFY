@@ -14,8 +14,14 @@ Criar uma rede social focada em críticas musicais com design moderno (Aero/Glas
 - **Card de destaque** mostrando álbum recomendado com rating
 - **Feed social** com avaliações da comunidade
 - **Sistema de likes** com feedback visual em tempo real
-- **Dock flutuante** de navegação no fundo da tela
+- **Dock flutuante** com navegação para a tela Explorar
 - **Tipografia customizada** com fontes Google importadas
+
+### 🔎 ExploreScreen
+- **Busca de lançamentos** por título, artista ou gênero
+- **Filtros de gênero** compactos em uma linha, navegáveis por gesto ou setas
+- **Catálogo em grade** com álbuns, EPs e singles filtrados em tempo real
+- **Navegação de retorno** para a tela inicial
 
 ### 🎨 Componentes Reutilizáveis
 - **AeroButton** - Botão com design glassmorphic e animações
@@ -62,7 +68,8 @@ MUSICFY/
 │   │   ├── components/
 │   │   │   └── AeroButton.jsx         # Botão reutilizável
 │   │   └── screens/
-│   │       └── HomeScreen.js          # Tela principal
+│   │       ├── HomeScreen.js          # Tela principal
+│   │       └── ExploreScreen.js       # Busca e descoberta musical
 │   ├── assets/                        # Imagens e ícones
 │   ├── App.js                         # Root component
 │   ├── index.js                       # Entry point
